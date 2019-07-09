@@ -25,7 +25,7 @@ class BasicHashTable:
 # Research and implement the djb2 hash function
 # '''
 def hash(string, max):
-    hash = 3313  # arbitrary number to initialize
+    hash = 5381  # arbitrary number to initialize
 
     for i in string:
         hash = ((hash << 5) + hash) + ord(i)
