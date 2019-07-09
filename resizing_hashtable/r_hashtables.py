@@ -99,7 +99,18 @@ def hash_table_retrieve(hash_table, key):
 # Fill this in
 # '''
 def hash_table_resize(hash_table):
-    pass
+    new_hash = HashTable(2 * len(hash_table.storage))
+
+    temp = None
+
+    for i in range(len(hash_table.storage)):
+        temp = hash_table.storage[i]
+        while temp is not None:
+            hash_table_insert(
+                new_hash, hash_table.storage[i].key, hash_table.storage[i].value)
+            temp = temp.next
+
+    return new_hash
 
 
 def Testing():
